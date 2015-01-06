@@ -105,8 +105,8 @@ var buildRequestUrl = function buildRequestUrl(serviceName, params, filters, san
       // break;
 
     case 'Signin':
-      if (sandbox) url = util.format("https://signin.sandbox.ebay.com/ws/eBayISAPI.dll?SignIn&RuName=%s&SessID=%s", params.RuName, params.SessID);
-      else url = util.format("https://signin.ebay.com/ws/eBayISAPI.dll?SignIn&RuName=%s&SessID=%s", params.RuName, params.SessID);
+      if (sandbox) url = util.format("https://signin.sandbox.ebay.com/ws/eBayISAPI.dll?SignIn&RuName=%s&SessID=%s&ruparams=%s", params.RuName, params.SessID, params.ruparams);
+      else url = util.format("https://signin.ebay.com/ws/eBayISAPI.dll?SignIn&RuName=%s&SessID=%s&ruparams=%s", params.RuName, params.SessID, params.ruparams);
 
       // params and filters don't apply to URLs w/ these
       return url;
